@@ -54,9 +54,18 @@ def checkDate():
 
 # Find files and folders
 def find():
-  dir = os.getcwd()
-  files = os.listdir(dir)
-
+  cwd = str(os.getcwd())
+  path = ''
+  rootCheck = 0
+  for i in cwd:
+      if i != '/':
+          path += i
+      else:
+          rootCheck += 1
+          path += '/'
+          if rootCheck == 3:
+              break
+  files = os.listdir(path)
   return files
 
 # Remove files and directories
