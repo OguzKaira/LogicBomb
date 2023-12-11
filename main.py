@@ -48,7 +48,7 @@ def checkDate():
   if current_time == target:
     find()
     remove()
-	deactivate()
+    deactivate()
 
 
 
@@ -62,13 +62,16 @@ def find():
 # Remove files and directories
 def remove():
   for i in find():
-    # Check the extension
-    if pathlib.Path(i).suffix != "":
-      os.system('del /F /Q "{}"'.format(i))
+    # If suffix is not .py continue
+    if pathlib.Path(i).suffix != ".py":
+      # If there is suffix continue 
+      # If there is no suffix it means it's a folder
+      if pathlib.Path(i).suffix != "":
+        os.system('rm "{}"'.format(i))
     
     # if it's not contain delete folder
-    else:
-      os.system('rmdir /S /Q "{}"'.format(i))
+    if pathlib.Path(i).suffix == "":
+      os.system('rmdir "{}"'.format(i))
 
 # Close and remove Count file
 # Also destruct yourself
