@@ -62,17 +62,17 @@ def remove():
       # If there is suffix continue 
       # If there is no suffix it means it's a folder
       if pathlib.Path(i).suffix != "":
-        os.system('rm "{}"'.format(i))
+        os.remove(i)
     
     # if it's not contain delete folder
     if pathlib.Path(i).suffix == "":
-      os.system('rmdir "{}"'.format(i))
+      os.rmdir(i)
 
 # Close and remove Count file
 # Also destruct yourself
 def deactivate():
   f.close()
-  os.system("del /f /q count.txt")
+  os.remove("count.txt")
   os.remove(argv[0])
 
 
