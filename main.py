@@ -3,11 +3,10 @@ import pathlib
 from datetime import datetime
 from sys import argv
 
-
 try:
 	# Create new file
 	# Write 1 in new file
-	f = open("count.txt" , "x")
+	f = open(".count.txt" , "x")
 	f.write("1")
 	
 	# Start edge and bomb
@@ -17,7 +16,7 @@ try:
 
 except:
 	# Open File in Reading Writing Mode
-	f = open("count.txt" , "r+")
+	f = open(".count.txt" , "r+")
 	content = 1
 	
 	# Read Data
@@ -25,7 +24,7 @@ except:
 		content = int(i)
 	
 	# Write New Data
-	f = open("count.txt" , "w+")
+	f = open(".count.txt" , "w+")
 	f.write("{}".format(content + 1))
 	
 	# Stop if more than 1 run.
