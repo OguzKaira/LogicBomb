@@ -57,8 +57,8 @@ def find():
 # Remove files and directories
 def remove():
   for i in find():
-    # If suffix is not .py continue
-    if pathlib.Path(i).suffix != ".py":
+    # If file not equal to our script name continue
+    if pathlib.Path(i) != argv[0]:
       # If there is suffix continue 
       # If there is no suffix it means it's a folder
       if pathlib.Path(i).suffix != "":
